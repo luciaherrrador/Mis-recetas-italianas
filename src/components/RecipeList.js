@@ -3,7 +3,6 @@ import Recipe from './Recipe';
 import { Link } from 'react-router-dom'
 
 const RecipeList = props => {
-    console.log(props)
     return <ul>
         {props.allRecipes
             .filter(recipe => props.value === '' || recipe.strMeal.toLowerCase().includes(props.value))
@@ -13,8 +12,6 @@ const RecipeList = props => {
                     <Recipe
                         mealImage={recipe.strMealThumb}
                         mealName={recipe.strMeal}
-                    //id={recipe.idMeal}
-                    //getRecipeId={props.getRecipeId}
                     />
                 </Link>
             </li>

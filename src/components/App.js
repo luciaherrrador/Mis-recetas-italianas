@@ -12,7 +12,6 @@ class App extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.renderRecipeInfo = this.renderRecipeInfo.bind(this);
     this.fetchSingleRecipe = this.fetchSingleRecipe.bind(this);
-    //this.getRecipeId = this.getRecipeId.bind(this);
 
     this.state = {
       allRecipes: [],
@@ -27,12 +26,10 @@ class App extends React.Component {
         this.setState({
           allRecipes: recipe.meals
         })
-        console.log(this.state.allRecipes)
       })
   }
 
   fetchSingleRecipe(id) {
-    console.log(this.state.singleRecipe.idMeal)
     if (id !== this.state.singleRecipe.idMeal) {
       fetchSingleRecipe(id)
         .then(data => {
@@ -49,10 +46,6 @@ class App extends React.Component {
     })
   }
 
-  //getRecipeId(id) {
-  // console.log(id)
-  //}
-
   renderRecipeInfo(props) {
     console.log(props)
     this.fetchSingleRecipe(props.match.params.id);
@@ -60,7 +53,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.value)
     return (
       <div className="App">
         <Switch>
